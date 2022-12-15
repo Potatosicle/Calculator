@@ -1,0 +1,40 @@
+<title>Calculator</title>
+<link rel="shortcut icon" type="x-icon" href="apple-touch-icon.png"> 
+<form>
+  <input type="text" id="input1" value="0">
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="text" id="input2" value="0">
+  <button type="button" onclick="calculate()">=</button>
+  <input type="text" id="result" value="0" disabled>
+</form>
+
+<script>
+  function calculate() {
+    // Get the values from the form
+    let input1 = document.getElementById("input1").value;
+    let input2 = document.getElementById("input2").value;
+    let operator = document.getElementById("operator").value;
+    let result = document.getElementById("result");
+
+    // Perform the calculation
+    switch (operator) {
+      case "+":
+        result.value = parseInt(input1) + parseInt(input2);
+        break;
+      case "-":
+        result.value = parseInt(input1) - parseInt(input2);
+        break;
+      case "*":
+        result.value = parseInt(input1) * parseInt(input2);
+        break;
+      case "/":
+        result.value = parseInt(input1) / parseInt(input2);
+        break;
+    }
+  }
+</script>
